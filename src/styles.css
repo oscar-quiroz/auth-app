@@ -285,8 +285,7 @@ iframe {
     display: block;
     width: 100%;
     height: 45px;
-    background: transparent;
-    padding: 0 5px;
+    padding: 5px 5px;
 }
 
 
@@ -324,8 +323,8 @@ iframe {
 .focus-input100::after {
     font-family: Poppins-Regular;
     font-size: 15px;
-    color: #999999;
     line-height: 1.2;
+    opacity: 0.2;
     content: attr(data-placeholder);
     display: block;
     width: 100%;
@@ -341,6 +340,7 @@ iframe {
 
 .input100:focus+.focus-input100::after {
     top: -15px;
+    opacity: 1;
 }
 
 .input100:focus+.focus-input100::before {
@@ -349,6 +349,7 @@ iframe {
 
 .has-val.input100+.focus-input100::after {
     top: -15px;
+    opacity: 1;
 }
 
 .has-val.input100+.focus-input100::before {
@@ -425,7 +426,7 @@ iframe {
     z-index: -1;
     width: 300%;
     height: 100%;
-    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+    background-image: linear-gradient( to right, #314755 0%, #26a0da 51%, #314755 100%);
     background: -webkit-linear-gradient( right, #21d4fd, #b721ff, #21d4fd, #b721ff);
     background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
     background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
@@ -537,7 +538,7 @@ iframe {
 }
 
 .btn-grad {
-    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)
+    background-image: linear-gradient( to right, #314755 0%, #26a0da 51%, #314755 100%);
 }
 
 .btn-grad {
@@ -9470,7 +9471,7 @@ iframe {
 /* ------------------------------------ */
 
 .lh-1-0 {
-    line-height: 1.0;
+    line-height: 1;
 }
 
 .lh-1-1 {
@@ -9510,7 +9511,7 @@ iframe {
 }
 
 .lh-2-0 {
-    line-height: 2.0;
+    line-height: 2;
 }
 
 .lh-2-1 {

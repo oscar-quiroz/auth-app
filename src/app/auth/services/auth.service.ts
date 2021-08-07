@@ -18,9 +18,29 @@ export class AuthService {
     return { ...this._usuario };
   }
 
+  register(name:string, email:string, password:string){
+    const url = `${this.baseUrl}/auth/new`;
+    const body = { name, email, password };
+    return this.http.post<authResponse>(url, body).pipe(
+      tap((res) => {
+        if (res.ok) {
+          localStorage.setItem('token', res.token!);
+          this._usuario = {
+            name: res.name!,
+            uid: res.uid!,
+          };
+        }
+      }),
+      map((res) => res.ok),
+      catchError((err) => of(err.error.msg)) // of transforma un valor booleano a un observable
+    );
+  }
+
+
+
   login(email: string, password: string) {
     const url = `${this.baseUrl}/auth`;
-    const body = { email, password };
+    const body = {  email, password };
 
     return this.http.post<authResponse>(url, body).pipe(
       tap((res) => {
